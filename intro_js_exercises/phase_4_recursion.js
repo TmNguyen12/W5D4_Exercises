@@ -24,7 +24,9 @@ function exponent (base, exp) {
 function fibonacci(n) {
   let newArr = [1,1];
   if (n===2) {
-    return [1];
+    return [1,1];
   }
-
+  let sum = newArr[n-1] + newArr[n-2];
+  newArr = newArr.push(sum);
+  return newArr.concat(fibonacci(n-1));
 }
